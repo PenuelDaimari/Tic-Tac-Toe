@@ -35,6 +35,13 @@ button {
     margin:20px;
 }
 
+button:hover{
+    color:green;
+    border:1px solid green;
+    border-radius:5px;
+    cursor:pointer;
+}
+
 .container {
     display:flex;
     flex-direction: column;
@@ -58,6 +65,11 @@ button {
     text-align: center;
     place-content: center;
 }
+.cell:hover{
+    color:black;
+    background-color:rgb(190, 211, 251);
+    cursor:pointer;
+}
 
 .xo {
     font-family: Arial, Helvetica, sans-serif;
@@ -77,6 +89,11 @@ button {
     text-align: center;
     place-content: center;
 }
+.wow:hover{
+    color:black;
+    background-color:darkseagreen;
+    cursor:pointer;
+}
 
 .err {
     color:red;
@@ -87,7 +104,11 @@ button {
     text-align: center;
     place-content: center;
 }
-
+.err:hover{
+    color:black;
+    background-color:indianred;
+    cursor:pointer;
+}
 .errenv {
     margin:20px;
     color:red;

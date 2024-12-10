@@ -1,3 +1,4 @@
+let heading = document.querySelector("#heading");
 let cells = document.querySelectorAll(".cell");
 let newGame = document.querySelector("#reset");
 let finalWinner = document.querySelector("#result");
@@ -29,6 +30,12 @@ const checkWinner = () => {
         val3 = pattern[2];
         if((values[val1]!='')&&(values[val1]===values[val2] && values[val2]===values[val3])){
             result = true;
+            cells[val1].classList.add("wow");
+            cells[val1].classList.remove("cell");
+            cells[val2].classList.add("wow");
+            cells[val2].classList.remove("cell");
+            cells[val3].classList.add("wow");
+            cells[val3].classList.remove("cell");
         }
     }
     return result;
@@ -41,6 +48,9 @@ for(let i = 0;i<9;i++){
 newGame.addEventListener('click',()=>{
     for(let n = 0;n<9;n++){
         cells[n].innerHTML="";
+        cells[n].classList.add("cell");
+        cells[n].classList.remove("wow");
+        cells[n].classList.remove("err");
         uniq[n] = 0;
         values[n]='';
     }
@@ -92,7 +102,13 @@ for(let i=0;i<9;i++){
         if(count==9 && winner=="tie"){
             finalWinner.innerHTML="<i>What a Tough Competition!</i>";
             finalWinner.style.visibility = "visible";
-            finalWinner.style.color = "#84cdee";
+            finalWinner.style.color = "red";
+            for(let n = 0;n<9;n++){
+                cells[n].classList.add("err");
+                cells[n].classList.remove("cell");
+            }
+            heading.classList.add("errenv");
+            butt.classList.add("buttonErr");
             console.log("Game over")
         }
     })
